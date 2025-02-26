@@ -10,7 +10,7 @@ const SignUp = () => {
   const [PhoneNumber, setphone] = useState(0);
   const handlesigup = async (event) => {
     event.preventDefault();
-    const req = await axios.post("http://localhost:3001/signup", {
+    const req = await axios.post("https://sjitmern-fa74.onrender.com", {
       firstName: FirstName,
       lastName: LastName,
       email: EmailID,
