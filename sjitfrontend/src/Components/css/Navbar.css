@@ -1,0 +1,40 @@
+nav{
+    display: flex;
+    background-color: orange;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+}
+
+.navli{
+    list-style-type: none;
+}
+
+.dropmain{
+    position: relative;
+    display: inline;
+}
+.dropdown-list{
+    position: absolute;
+    /* display: block; */
+    background-color: pink;
+    list-style-type: none;
+    border-radius: 3px;
+    /* height: 150px; */
+    /* width: 150px; */
+    min-width: 160px;
+    margin: 0px;
+}
+.navlink{
+    text-align: center;
+    text-decoration: none;
+    color: red;
+}
+
+.navlink:hover{
+    background-color: black;
+}
+
+.link{
+    text-decoration: none;
+}

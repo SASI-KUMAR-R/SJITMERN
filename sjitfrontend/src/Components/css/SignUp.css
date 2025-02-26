@@ -1,0 +1,28 @@
+.maindiv{
+    margin: 50px auto;
+    padding: 50px;
+    width: 25%;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 2px 2px 9px rgb(144, 138, 138);
+}
+
+.inputdiv{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-top: 15px;
+}
+
+.font{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: lighter;
+}
+
+.logindiv{
+    margin-top: 10px;
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+#external{
+    background-color: rgb(161, 235, 13);
+    height: 200px;
+    width: 200px;
+}
+ol{
+    margin-top: 50px;
+    margin-bottom:50px ;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgb(111, 228, 233);
+    list-style: circle;
+}
+/* *{
+    background-color: rgb(8, 242, 35);
+} */

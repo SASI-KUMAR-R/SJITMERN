@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+}
+nav{
+    display: flex;
+    /* flex-direction: row; */
+    list-style-type: none;
+    justify-content: space-evenly;
+    /* gap: 30px; */
+    background-color:orangered ;
+    padding: 20px;
+}
+a
+{
+    text-decoration: none;;
+    /* text-decoration-color: white; */
+    color: white;
+    /* cursor: grabbing; */
+}
+.link{
+    text-decoration: none;
+    color: white;
+    padding: 3px;
+}
+.link:hover
+{
+    background-color: black;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+h1
+{
+    display: inline;
+}
+header{
+    background-color: orangered;
+}
+ol{
+
+    padding-left: 0;
+    margin-top: 25px;
+    /* margin:0; */
+    position: absolute;
+    list-style-type: none;
+}

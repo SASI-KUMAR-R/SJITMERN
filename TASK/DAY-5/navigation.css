@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+header
+{
+    background-color: aqua;
+}
+nav{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    background-color: aqua;
+    padding: 16px;
+}
+img{
+    height: 100px;
+    width: 100px;
+}
+h1{
+    display: inline;
+}
+.link{
+    text-decoration: none;
+    color:rgb(255, 0, 0);
+}
+.link:hover{
+    color: blueviolet;
+    text-decoration: overline;
+    /* border-radius: 20px; */
+}
+ol{
+    padding-left: 1px;
+    list-style-type: none;
+    position: absolute;
+}

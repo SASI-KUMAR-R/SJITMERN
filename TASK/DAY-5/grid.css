@@ -1,0 +1,18 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color: pink;
+    height: 600px; 
+}
+.gird-items
+{
+    background-color: yellow;
+    text-align: center;
+    margin: 10px;
+    height: 250px;
+    margin-top: 25px;
+}
+img{
+    height: 180px;
+    margin-top: 10px;
+}

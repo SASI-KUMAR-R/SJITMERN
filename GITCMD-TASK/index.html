@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git-Task</title>
+</head>
+<body>
+    <h3>GIT & GITHUB :</h3>
+    <ol>
+        <li><strong>Git</strong> is a version control system that helps track changes in code.</li>
+        <li><strong>GitHub</strong> is a cloud-based platform that lets you store, share, and collaborate on Git repositories online.</li>
+    </ol>
+    <h3>Basic Git Commands</h3>
+    <ol>
+        <li>
+            <h3>Configuration Commands</h3>
+            <ul>
+                <li>git config --global user.name "Your Name"  # Set username</li>
+                <li>git config --global user.email "your-email@example.com"  # Set email</li>
+                <li>git config --list  # View configuration settings</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Repository Management</h3>
+            <ul>
+                <li>git init  # Initialize a new Git repository</li>
+                <li>git clone (repository_url)  # Clone an existing repository</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Working with Changes</h3>
+            <ul>
+                <li>git status  # Check the status of changes</li>
+                <li>git add (file)  # Stage a specific file</li>
+                <li>git add .  # Stage all changes</li>
+                <li>git commit -m "Your commit message"  # Commit changes</li>
+                <li>git log  # View commit history</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Branching & Merging</h3>
+            <ul>
+                <li>git branch  # List branches</li>
+                <li>git branch <branch_name>  # Create a new branch</li>
+                <li>git checkout <branch_name>  # Switch to a branch</li>
+                <li>git merge <branch_name>  # Merge a branch into the current branch</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Remote Repositories (GitHub)</h3>
+            <ul>
+                <li>git remote add origin <repository_url>  # Link local repo to GitHub</li>
+                <li>git push -u origin main  # Push local repo to GitHub</li>
+                <li>git pull origin main  # Pull latest changes from GitHub</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Undo & Reset</h3>
+            <ul>
+                <li>git reset --soft HEAD~1  # Undo last commit (keep changes)</li>
+                <li>git reset --hard HEAD~1  # Undo last commit (delete changes)</li>
+                <li>git revert <commit_id>  # Revert a specific commit</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

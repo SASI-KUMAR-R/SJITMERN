@@ -1,0 +1,27 @@
+.box-model {
+    background-color: darkcyan;
+    margin: 5px;
+    padding: 30px;
+    border: solid 5px palevioletred;
+    box-sizing: border-box; 
+}
+
+.fixed-position {
+    position: fixed; 
+    top: 0; 
+    background-color: rgb(118, 175, 198);
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.relative-position {
+    position: relative;
+    margin-top: 15px;
+}
+
+body {
+    margin-top: 70px; 
+}
