@@ -7,7 +7,7 @@ const SignUp = () => {
   const [LastName, setlast] = useState("");
   const [EmailID, setemail] = useState("");
   const [Password, setpass] = useState("");
-  const [PhoneNumber, setphone] = useState(0);
+  const [PhoneNumber, setphone] = useState("");
   const handlesigup = async (event) => {
     event.preventDefault();
     const req = await axios.post("https://sjitmern-fa74.onrender.com", {
@@ -21,8 +21,9 @@ const SignUp = () => {
     const isSignup = req.data.isSignup;
     if (isSignup) {
       alert(message);
-      Navigate("/login");
-    } else {
+      Navigate("/login")
+    }
+    else{
       alert(message);
     }
   };
