@@ -7,7 +7,7 @@ const SignUp = () => {
   const [LastName, setlast] = useState("");
   const [EmailID, setemail] = useState("");
   const [Password, setpass] = useState("");
-  const [PhoneNumber, setphone] = useState("");
+  const [PhoneNumber, setphone] = useState(0);
   const handlesigup = async (event) => {
     event.preventDefault();
     const req = await axios.post("https://sjitmern-fa74.onrender.com", {
@@ -73,7 +73,7 @@ const SignUp = () => {
             name="PhoneNumber"
             placeholder="PhoneNumber"
             value={PhoneNumber}
-            onChange={(e) => setphone(parseInt(e.target.value))}
+            onChange={(e) => setphone(e.target.value)}
           />
           <br />
           <button type="submit" onClick={handlesigup}>
