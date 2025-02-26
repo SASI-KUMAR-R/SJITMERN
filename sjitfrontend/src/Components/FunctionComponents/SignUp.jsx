@@ -1,7 +1,7 @@
 import "../css/SignUp.css";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from 'axios' ;
+import { Link, Navigate } from "react-router-dom";
+import axios from "axios";
 const SignUp = () => {
   const [FirstName, setfirst] = useState("");
   const [LastName, setlast] = useState("");
@@ -10,13 +10,19 @@ const SignUp = () => {
   const [PhoneNumber, setphone] = useState(0);
   const handlesigup = async (event) => {
     event.preventDefault();
-    axios.post("http://localhost:3001/signup", {
-      firstName: FirstName, lastName: LastName, email: EmailID, password: Password, phoneNumber: PhoneNumber
+    const req = await axios.post("http://localhost:3001/signup", {
+      firstName: FirstName,
+      lastName: LastName,
+      email: EmailID,
+      password: Password,
+      phoneNumber: PhoneNumber,
     });
     const message = req.data.message;
     const isSignup = req.data.isSignup;
-    if(isSignup)
-    {
+    if (isSignup) {
+      alert(message);
+      Navigate("/login");
+    } else {
       alert(message);
     }
   };
@@ -66,7 +72,7 @@ const SignUp = () => {
             name="PhoneNumber"
             placeholder="PhoneNumber"
             value={PhoneNumber}
-            onChange={(e) => setphone(e.target.value)}
+            onChange={(e) => setphone(parseInt(e.target.value))}
           />
           <br />
           <button type="submit" onClick={handlesigup}>
