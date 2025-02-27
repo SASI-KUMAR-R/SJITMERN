@@ -1,88 +1,96 @@
 import "../css/SignUp.css";
 import React, { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 const SignUp = () => {
-  const [FirstName, setfirst] = useState("");
-  const [LastName, setlast] = useState("");
-  const [EmailID, setemail] = useState("");
-  const [Password, setpass] = useState("");
-  const [PhoneNumber, setphone] = useState(0);
-  const handlesigup = async (event) => {
+  const [FirstName, setFirst] = useState("");
+  const [LastName, setLast] = useState("");
+  const [EmailID, setEmail] = useState("");
+  const [Password, setPass] = useState("");
+  const [PhoneNumber, setPhone] = useState(0);
+  const navigate = useNavigate();
+
+  const handleSignup = async (event) => {
     event.preventDefault();
-    const req = await axios.post("https://sjitmern-fa74.onrender.com/signup", {
-      firstName: FirstName,
-      lastName: LastName,
-      email: EmailID,
-      password: Password,
-      phoneNumber: PhoneNumber,
-    });
-    const message = req.data.message;
-    const isSignup = req.data.isSignup;
-    if (isSignup) {
+    try {
+      const response = await axios.post("https://sjitmern-fa74.onrender.com/signup", {
+        firstName: FirstName,
+        lastName: LastName,
+        email: EmailID,
+        password: Password,
+        phoneNumber: PhoneNumber,
+      });
+
+      const message = response.data.message;
+      const isSignup = response.data.isSignup;
+
       alert(message);
-      Navigate("/login")
-    }
-    else{
-      alert(message);
+      if (isSignup) {
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error("Signup error:", error);
+      alert("Signup failed. Please try again.");
     }
   };
+
   return (
     <div className="maindiv">
       <h1 className="font">SIGN UP</h1>
-      <form>
+      <form onSubmit={handleSignup}>
         <div className="inputdiv">
-          <label htmlFor="FirstName">FirstName :</label>
+          <label htmlFor="FirstName">First Name:</label>
           <input
             type="text"
-            name="username"
-            placeholder="Enter Username"
+            name="firstName"
+            placeholder="Enter First Name"
             value={FirstName}
-            onChange={(e) => setfirst(e.target.value)}
-          />
-          <label htmlFor="LastName">LastName :</label>
-          <input
-            type="text"
-            name="username"
-            placeholder="Enter Username"
-            value={LastName}
-            onChange={(e) => setlast(e.target.value)}
+            onChange={(e) => setFirst(e.target.value)}
           />
 
-          <label htmlFor="EmailID">EmailID :</label>
+          <label htmlFor="LastName">Last Name:</label>
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Enter Last Name"
+            value={LastName}
+            onChange={(e) => setLast(e.target.value)}
+          />
+
+          <label htmlFor="EmailID">Email ID:</label>
           <input
             type="email"
             name="email"
-            placeholder="Enter Emailid"
+            placeholder="Enter Email ID"
             value={EmailID}
-            onChange={(e) => setemail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
-          <label htmlFor="Password">Password :</label>
+          <label htmlFor="Password">Password:</label>
           <input
             type="password"
             name="password"
             placeholder="Enter Password"
             value={Password}
-            onChange={(e) => setpass(e.target.value)}
+            onChange={(e) => setPass(e.target.value)}
           />
 
-          <label htmlFor="PhoneNumber">PhoneNumber :</label>
+          <label htmlFor="PhoneNumber">Phone Number:</label>
           <input
-            type="number"
-            name="PhoneNumber"
-            placeholder="PhoneNumber"
+            type="text"
+            name="phoneNumber"
+            placeholder="Enter Phone Number"
             value={PhoneNumber}
-            onChange={(e) => setphone(e.target.value)}
+            onChange={(e) => setPhone(e.target.value)}
           />
           <br />
-          <button type="submit" onClick={handlesigup}>
-            SignUp
-          </button>
+
+          <button type="submit">Sign Up</button>
         </div>
       </form>
       <div className="logindiv">
-        <p>Already a Account Holder??</p>
+        <p>Already have an account?</p>
         <Link to="/login">Login</Link>
       </div>
     </div>
