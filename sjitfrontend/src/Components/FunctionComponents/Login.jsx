@@ -17,10 +17,10 @@ const Login = () => {
       });
 
       const message = response.data.message;
-      const isSignup = response.data.isSignup;
+      const isLogin = response.data.isLogin;
 
       alert(message);
-      if (isSignup) {
+      if (isLogin) {
         navigate("/");
       }
     } catch (error) {

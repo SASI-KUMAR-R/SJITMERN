@@ -15,7 +15,6 @@ import UseMemoize from './Components/FunctionComponents/Hooks/useMemoize'
 import HoC from './Components/FunctionComponents/HoC/HoC'
 import Memo from './Components/FunctionComponents/Memoization/Memo'
 import LazyLoadingAndSusepense from './Components/FunctionComponents/Memoization/LazyLoadingAndSuspense'
-// import StudentResults from './Components/FunctionComponents/ContextAPI/StudentResults'
 import CoE from './Components/FunctionComponents/ContextAPI/CoE'
 function App() {
   return (
@@ -39,7 +38,6 @@ function App() {
           <Route path='/use-callback' element={<UseCallback />} />
           <Route path='/use-memoize' element={<UseMemoize />} />
           <Route path='/example' element={<Memo />} />
-          {/* <Route path='/example2' element={<NumberFile />} /> */}
         </Routes>
       </BrowserRouter>
     </main>
